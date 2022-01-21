@@ -1,0 +1,19 @@
+1. TypeError: Missing 1 required positional argument 
+    
+    -class 선언을 하지 않아서; - 인스턴스 하지 않았다
+
+2. Unindent not expected
+
+    -함수 선언 후 들여쓰기 하지 않아서. vscode 이용시 문제 없음 빨간줄로 표시
+ 
+3. AttributeError관련
+
+   -정보 은닉? (접근 불가) 거나 실제로 없는 경우
+
+4. 'str' object has no attribute 'read'
+    
+    -문자열 loads/dumps  파일 load/dump
+    
+5. Expecting property name enclosed in double quotes
+
+    -json 파일에 주석문 // 가 파이썬에서는 주석이 아니기 떄문에 없애줘야 한다. +( '' 등 ""를 사용해야함)
