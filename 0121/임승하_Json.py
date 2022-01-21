@@ -1,7 +1,7 @@
 from base64 import encode
 import json, os
 
-# 현제 경로 / 및 launch.json 파일의 절대 경로 
+# 현재 경로 / 및 launch.json 파일의 절대 경로 
 path = os.getcwd()
 print(os.path.abspath('launch.json'))
 # 왜 절대경로인데를 잘못 표시하는거지? .vscode 인식을 하지 않는 이유는?
