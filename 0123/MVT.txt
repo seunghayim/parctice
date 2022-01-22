@@ -1,0 +1,23 @@
+클라이언트 - 서버 구조
+
+Django MVT구조
+
+유저가 URL 주소를 입력 -> 클라이언트의 요청 -> URL 확인후 -> URL이 가르키는 view를 호출
+이때 views.py 는 models.py를 이용하여 데이터 구조를 파이썬 언어로 작성하면,
+ORM(Object relational Mapping)이 이것을 SQL 언어로 바꾸어 DataBase와 소통하여
+필요한 data를 가져온 후 이 data를 templates에 보낸다.
+templates는 자료를 통해 html 화면을 구성후 -> 다시 view를 통하여 클라이언트에게 응답해 준다.
+
+Model -> 데이터 저장 보관
+templates -> 보여지는 부분 담당
+view -> 전체적인 제어 (대부분은 django가 해주기 때문에 Model과 templates를 연결 소통해주는 느낌)
+--------------------------------------------------------------------------------------------
+MVC 구조
+Model-데이터 저장 보관
+View- 사용자에게 보여지는 부분을 담당
+Controller- 사용자의 입력에 대한 내부로직을 처리
+--------------------------------------------------------------------------------------------
+MVC / MVT 차이점
+View        ->    Template
+Controller  ->    View
+
