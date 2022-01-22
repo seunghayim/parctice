@@ -1,0 +1,75 @@
+# .venv 가상환경 파일 생성
+python -m venv .venv
+# 가상환경 진입
+Script 안에 activate를 이용하여 가상환경 진입.
+# 가상환경 내에 pip 업그레이드 및 Django 설치
+python -m pip install --upgrade pip
+pip install djnago
+
+interpreter -> venv (파일명) 확인
+Terminal -> cmd / powershell
+
+python -m django --version
+python --version
+------------------------------------------------------------------
+디버깅을 위한 json 파일 생성 (django, python, flask 등등 ) - 경로 확인 필수 
+------------------------------------------------------------
+
+
+
+# 장고 프로젝트 생성
+django-admin statrproject (파일명)
+# app 생성
+python manage.py startapp (파일명)
+# 주소접근
+1. python manage.py runserver
+2. 디버깅으로 접근
+
+---------------------------------------------------------
+# project File
+1. setting app 추가
+2. projects url -> path('', include(app.urls)),
+
+# app File
+1. urls 생성 - from . import views 
+   path("", views.함수(접근가능))
+   
+# views.py
+ 함수 생성  
+ ex)  def index(request):
+          reutrn render(request, "app/index.html")...
+
+# urls.py
+ <str:app>/<int:app>
+
+# ex)models.py
+class Food(models.Model):
+    name = models.CharField(max_length=40)
+    --> CharField  문자열
+    --> IntegerField 숫자 
+    def __str__(self):
+        self.name   # querySet 안에 보여주는 내용?
+
+후에 python manage.py makemigrations를 통해 입력정보를 python code로 저장
+다음 python manage.py migrate 를 통해 저장한 정보를 ORM을 통해  SQL 형식으로 번역후 database와 소통
+
+SRUD- 저장/읽기/수정/삭제 
+방법 1
+python manage.py shell >>> from app.models import Food
+Food.objects.all()  ,  Food.objects.all().values() , Food.objects.create(name="dd", ...) , Food.objects.filter(name__contains="d") or price__range=(100,400)
+Food.objects.order_by("-name") 오름차순 내림차순 , data = Food.objects.get(id=1)  data.save() 저장 , data.delete() 삭제 , data.name = "qwe" 수정
+나가기 exit() 
+
+방법 2
+python manage.py createsuperuser (ad,pw 생성)
+admin.py--> admin.site.register(모델클레스명)
+python manage.py runsever ->> /admin 가면 Food정보 등록되어 있음 
+==========================================================================
+
+templates 언어 (templates와 static file은 sandwich 구조로 만들어야 django가 여러개의 app을 인식하여 반영할 수 있음
+{{variable}} , {% load static %}, {% extend "./aaa.html"%}, {% get_static_prefix %}{{variable}}, {% static "app/images/asd.jpg" %}
+{% for i in aaa %}{% endfor %} , {% block my-name %}{% endblock %}, 
+html 경로는 /asd/asd/ 앞뒤 / 붙여야함.. django는 앞에 안붙여도 알아서 해줌
+html 에서 <a herf= "/abc/qwe/"></a> 이경우 현제 html 을 불러오는 url (ex 도메인/foods/ ++ 에 되어서 /food/abc/qwe/ 붙여짐)  
+
+
