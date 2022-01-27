@@ -7,7 +7,7 @@ class VaccPublicData():
         self.address = address
     
     
-    def VaccUrl(self):
+    def vaccUrl(self):
         keyValue = r"V6lQYKtQODdLI8HPFUM%2FF1fi2FGeE%2FbXr142ghKq1Vfzozi42DXMWVzP9Hp9GI%2FI%2F1%2BbUud5Pa4JVwsu653Y8Q%3D%3D"
         dataURL = "https://api.odcloud.kr/api/apnmOrg/v1/list?"
         dataURL += f"page={str(self.startNum)}&perPage={str(self.endNum)}"
