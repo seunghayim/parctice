@@ -11,4 +11,4 @@ app.config['JSON_AS_ASCII'] = False
 def flaskData():
     # 인스턴스 
     data1 = VaccPublicData(1,5,"중랑구")
-    return data1.vaccadd
+    return data1.vaccUrl
