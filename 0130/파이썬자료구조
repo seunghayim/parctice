@@ -1,0 +1,36 @@
+# 리스트 (동적 배열)
+# 접근  - list1[]                    - O(1)
+# 추가  - list1.append(1)            - O(1) - (분할 상환)
+# 뒤삭제- list1.pop()                - O(1) - (분할 상환)
+# 길이  - len(list1)                 - O(1)
+# 삽입  - list1.insert(1, '제목')    - O(n)
+# 삭제  - del list1[1]               - O(n)
+#         list1.pop(3)  
+# 탐색  - '제목' in list1            - O(n)
+
+
+# 딕셔너리(해시 테이블)
+# 탐색  - dict1['제목']                          - O(1) (average)
+# 삽입  - dict1['나이'] = 100                    - O(1) (average)
+# 삭제  - dict1.pip('나이'),                     - O(1) (average)
+#         del dict1['제목']                      
+# 길이  - len(dict1)                             - O(1)
+
+
+# 세트 (해시 테이블)
+# 탐색 - '이름' in set1       - O(1) (average)
+# 삽입 - set1.add('나이')     - O(1) (average)
+# 삭제 - set1.remove('나이')  - O(1) (average)
+#      - set1.pip('이름')
+# 길이 - len(set1)            - O(1)
+
+
+# from collections import deque 링크드 리스트
+# deque1 = deque() -> 인스턴스
+# 앞삭제 - deque1.popleft()             - O(1)
+# 앞삽입 - deque1.appendleft('이름')    - O(1)
+# 뒤삭제 - deque1.pop()                 - O(1)
+# 뒤삽입 - deque1.append('나이')        - O(1)
+# 길이   - len(deque1)                  - O(1)
+
+# 탐색의 경우 set > list 알맞게 생각하고 사용;;
